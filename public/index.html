@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolarForm</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./src/scripts/maps.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJTKt_XzEFz1VXRIJcJ90eFRCnyWUYY2w&libraries=places&language=en&callback=initAutocomplete"
+      async
+      defer
+      loading="async"
+    ></script>
+  </head>
+  <body class="bg-black">
+    <div class="max-w-4xl mx-auto px-[60px] py-4">
+      <div class="flex justify-end lang-switch mb-2 space-x-2">
+        <button data-lang="ru">🇷🇺 RU</button>
+        <button data-lang="en">🇬🇧 EN</button>
+        <button data-lang="el">🇬🇷 GR</button>
+      </div>
+    </div>
+
+    <form
+      class="max-w-4xl mx-auto px-[60px] py-[60px] bg-white rounded-2xl shadow-lg space-y-6"
+      id="solarForm"
+    >
+      <div class="flex justify-between items-start">
+        <div>
+          <h2
+            class="text-3xl font-bold text-gray-900 leading-tight"
+            data-ru="12 месяцев<br>обслуживание"
+            data-en="12 months<br>of service"
+            data-el="12 μήνες<br>συντήρησης"
+          >
+            12 месяцев<br />обслуживание
+          </h2>
+        </div>
+        <div class="text-3xl text-orange-500">
+          <img src="./src/img/Lightning 1.svg" alt="" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name*"
+          data-placeholder-en="First name*"
+          data-placeholder-ru="Имя*"
+          data-placeholder-el="Όνομα*"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required
+          data-ru="Имя*"
+          data-en="First name*"
+          data-el="Όνομα*"
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name*"
+          data-placeholder-en="Last name*"
+          data-placeholder-ru="Фамилия*"
+          data-placeholder-el="Επώνυμο*"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required
+          data-en="Last name*"
+          data-ru="Фамилия*"
+          data-el="Επώνυμο*"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email*"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required
+          data-ru="Эл. почта*"
+          data-en="Email*"
+          data-el="Email*"
+        />
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required
+          data-en="Phone*"
+          data-ru="Телефон*"
+          data-el="Τηλέφωνο*"
+        />
+        <input
+          type="text"
+          name="street"
+          id="street"
+          placeholder="Улица и номер дома"
+          data-placeholder-en="Street and house number"
+          data-placeholder-ru="Улица и номер дома"
+          data-placeholder-el="Οδός και αριθμός"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          data-ru="Улица и номер дома"
+          data-en="Street and house number"
+          data-el="Οδός και αριθμός"
+        />
+        <input
+          type="text"
+          name="city"
+          id="city"
+          placeholder="Город и район"
+          data-placeholder-en="City and district"
+          data-placeholder-ru="Город и район"
+          data-placeholder-el="Πόλη και περιοχή"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          data-ru="Город и район"
+          data-en="City and district"
+          data-el="Πόλη και περιοχή"
+        />
+        <input
+          type="text"
+          name="postal"
+          id="zip"
+          placeholder="Почтовый индекс"
+          data-placeholder-en="Postal code"
+          data-placeholder-ru="Почтовый индекс"
+          data-placeholder-el="Ταχυδρομικός κώδικας"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          data-ru="Почтовый индекс"
+          data-en="Postal code"
+          data-el="Ταχυδρομικός κώδικας"
+        />
+        <input
+          type="text"
+          name="installYear"
+          placeholder="Примерный год установки"
+          data-placeholder-en="Installation year"
+          data-placeholder-ru="Примерный год установки"
+          data-placeholder-el="Έτος εγκατάστασης"
+          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          data-ru="Примерный год установки"
+          data-en="Installation year"
+          data-el="Έτος εγκατάστασης"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <fieldset class="space-y-2">
+          <legend
+            class="font-semibold"
+            data-ru="Модель вашего инвертора"
+            data-en="Your inverter model"
+            data-el="Μοντέλο του inverter σας"
+          >
+            Модель вашего инвертора
+          </legend>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="inverter"
+              value="SolarEdge"
+              class="custom-checkbox cursor-pointer"
+              checked
+            />
+            <span>SolarEdge</span>
+          </label>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="inverter"
+              value="Huawei"
+              class="custom-checkbox cursor-pointer"
+            />
+            <span>Huawei</span>
+          </label>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="inverter"
+              value="Solax"
+              class="custom-checkbox cursor-pointer"
+            />
+            <span>Solax</span>
+          </label>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="inverter"
+              value="Deye"
+              class="custom-checkbox cursor-pointer"
+            />
+            <span>Deye</span>
+          </label>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="inverter"
+              value="Other"
+              class="custom-checkbox cursor-pointer"
+            />
+            <span data-ru="Другая" data-en="Other" data-el="Άλλο">Другая</span>
+          </label>
+        </fieldset>
+
+        <fieldset class="space-y-2">
+          <legend
+            class="font-semibold"
+            data-ru="К какому интернету подключён ваш инвертор?"
+            data-en="What internet is your inverter connected to?"
+            data-el="Σε ποιο δίκτυο είναι συνδεδεμένος ο inverter σας;"
+          >
+            К какому интернету подключён ваш инвертор?
+          </legend>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="connection"
+              value="Wi-Fi"
+              class="custom-checkbox cursor-pointer"
+              checked
+            />
+            <span>Wi-Fi</span>
+          </label>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="connection"
+              value="4G"
+              class="custom-checkbox cursor-pointer"
+            />
+            <span>4G</span>
+          </label>
+          <label class="flex items-center space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              name="connection"
+              value="None"
+              class="custom-checkbox cursor-pointer"
+            />
+            <span
+              data-ru="Не подключён"
+              data-en="Not connected"
+              data-el="Δεν είναι συνδεδεμένος"
+              >Не подключён</span
+            >
+          </label>
+        </fieldset>
+      </div>
+
+      <fieldset class="space-y-2">
+        <legend
+          class="font-semibold"
+          data-ru="Есть ли у вас доступ к приложению мониторинга?"
+          data-en="Do you have access to the monitoring app?"
+          data-el="Έχετε πρόσβαση στην εφαρμογή παρακολούθησης;"
+        >
+          Есть ли у вас доступ к приложению мониторинга?
+        </legend>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="monitoring"
+            value="Да"
+            class="custom-checkbox cursor-pointer"
+            checked
+          />
+          <span data-ru="Да" data-en="Yes" data-el="Ναι">Да</span>
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="monitoring"
+            value="Утерян"
+            class="custom-checkbox cursor-pointer"
+          />
+          <span
+            data-ru="Нет, доступ утерян"
+            data-en="No, access lost"
+            data-el="Όχι, η πρόσβαση χάθηκε"
+            >Нет, доступ утерян</span
+          >
+        </label>
+        <label class="flex items-center space-x-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="monitoring"
+            value="Не предоставлялся"
+            class="custom-checkbox cursor-pointer"
+          />
+          <span
+            data-ru="Нет, доступ не предоставлялся"
+            data-en="No access was provided"
+            data-el="Όχι, δεν δόθηκε πρόσβαση"
+            >Нет, доступ не предоставлялся</span
+          >
+        </label>
+      </fieldset>
+
+      <button
+        type="submit"
+        class="w-full text-white py-3 rounded-xl font-semibold bg-[#F65B18] hover:bg-[#e04f12]"
+        data-ru="Оплатить"
+        data-en="Pay"
+        data-el="Πληρωμή"
+      >
+        Оплатить
+      </button>
+      <p
+        class="text-center text-sm text-gray-500 font-semibold"
+        data-ru="Отправляя заявку, вы соглашаетесь на обработку персональных данных"
+        data-en="By submitting the form, you agree to the processing of personal data."
+        data-el="Υποβάλλοντας την αίτηση, συμφωνείτε με την επεξεργασία προσωπικών δεδομένων."
+      >
+        Отправляя заявку, вы соглашаетесь <br />
+        на обработку <a href="#" class="underline">персональных данных</a>
+      </p>
+    </form>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="./src/scripts/checkbox.js"></script>
+    <script src="./src/scripts/fetch.js"></script>
+    <script src="./src/scripts/lang.js"></script>
+  </body>
+</html>
