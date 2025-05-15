@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SolarForm</title>
+    <link href="https://fonts.cdnfonts.com/css/clear-sans" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles/style.css" />
     <link
       rel="stylesheet"
@@ -23,14 +24,14 @@
       class="max-w-[900px] mx-auto px-[50px] py-[38px] bg-white rounded-xl shadow-lg space-y-6 relative"
       id="solarForm"
     >
-      <div class="absolute top-5 right-10">
+      <div class="absolute top-2 right-2">
         <select
           id="languageSelect"
-          class="p-2 border rounded-lg cursor-pointer"
+          class="p-2 rounded-lg cursor-pointer bg-transparent"
         >
-          <option value="ru">🇷🇺 Русский</option>
-          <option value="en" selected>🇬🇧 English</option>
-          <option value="el">🇬🇷 Ελληνικά</option>
+          <option value="ru">🇷🇺</option>
+          <option value="en" selected>🇬🇧</option>
+          <option value="el">🇬🇷</option>
         </select>
       </div>
       <div class="flex justify-between items-start">
@@ -53,7 +54,7 @@
         <input
           type="text"
           name="firstName"
-          placeholder="First name*"
+          placeholder="Имя*"
           data-placeholder-en="First name*"
           data-placeholder-ru="Имя*"
           data-placeholder-el="Όνομα*"
@@ -66,7 +67,7 @@
         <input
           type="text"
           name="lastName"
-          placeholder="Last name*"
+          placeholder="Фамилия*"
           data-placeholder-en="Last name*"
           data-placeholder-ru="Фамилия*"
           data-placeholder-el="Επώνυμο*"
@@ -92,9 +93,6 @@
           id="phone"
           class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           required
-          data-en="Phone*"
-          data-ru="Телефон*"
-          data-el="Τηλέφωνο*"
         />
         <input
           type="text"
@@ -312,9 +310,10 @@
       </button>
       <p
         class="text-center text-sm text-gray-500 font-semibold"
-        data-ru="Отправляя заявку, вы соглашаетесь на обработку персональных данных"
-        data-en="By submitting the form, you agree to the processing of personal data."
-        data-el="Υποβάλλοντας την αίτηση, συμφωνείτε με την επεξεργασία προσωπικών δεδομένων."
+        data-ru="Отправляя заявку, вы соглашаетесь <br />
+        на обработку <a href='#' class='underline'>персональных данных</a>"
+        data-en="By submitting the form, <br /> you agree to the processing of <a href='#' class='underline'>personal data.</a>"
+        data-el="Υποβάλλοντας την αίτηση,<br/> συμφωνείτε με την επεξεργασία <a href='#' class='underline'>προσωπικών δεδομένων.</a>"
       >
         Отправляя заявку, вы соглашаетесь <br />
         на обработку <a href="#" class="underline">персональных данных</a>
