@@ -1,24 +1,26 @@
-input[type="checkbox"].custom-checkbox {
+.custom-checkbox {
   appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 7px;
-  border: 1px solid #9ca3af; /* gray-400 */
-  position: relative;
-  vertical-align: middle;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9ca3af;
+  border-radius: 5px;
   background-color: white;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
-input[type="checkbox"].custom-checkbox:checked::before {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>');
+.custom-checkbox:checked::before {
+  content: "";
   position: absolute;
   top: 2px;
-  left: 2px;
-  width: 15px;
-  height: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 label {
