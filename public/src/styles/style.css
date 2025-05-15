@@ -12,10 +12,10 @@ input[type="checkbox"].custom-checkbox {
 input[type="checkbox"].custom-checkbox:checked::before {
   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>');
   position: absolute;
-  top: 1.5px;
-  left: 1.5px;
-  width: 16px;
-  height: 16px;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +24,7 @@ input[type="checkbox"].custom-checkbox:checked::before {
 label {
   user-select: none;
   font-weight: 600;
+  width: max-content;
 }
 
 * {
