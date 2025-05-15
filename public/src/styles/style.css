@@ -1,3 +1,11 @@
+* {
+  font-family: "Clear Sans", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+}
 .custom-checkbox {
   appearance: none;
   -webkit-appearance: none;
@@ -27,8 +35,4 @@ label {
   user-select: none;
   font-weight: 600;
   width: max-content;
-}
-
-* {
-  font-family: "Clear Sans", sans-serif;
 }

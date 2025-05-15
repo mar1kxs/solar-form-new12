@@ -136,6 +136,7 @@
         <input
           type="text"
           name="installYear"
+          id="installYear"
           placeholder="Примерный год установки"
           data-placeholder-en="Installation year"
           data-placeholder-ru="Примерный год установки"
@@ -145,6 +146,13 @@
           data-en="Installation year"
           data-el="Έτος εγκατάστασης"
         />
+        <p
+          id="installYearError"
+          class="mt-1 text-sm text-red-600 hidden text-right"
+          style="width: 100%"
+        >
+          Please enter a valid year.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

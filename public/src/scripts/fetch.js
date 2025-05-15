@@ -16,6 +16,27 @@ document
     e.preventDefault();
 
     const form = e.target;
+    const installYearInput = form.installYear;
+    const installYear = parseInt(installYearInput.value, 10);
+    const currentYear = new Date().getFullYear();
+    const errorMsg = document.getElementById("installYearError");
+
+    installYearInput.classList.remove(
+      "ring-2",
+      "ring-red-500",
+      "border-red-500"
+    );
+    errorMsg.classList.add("hidden");
+
+    if (isNaN(installYear) || installYear < 1980 || installYear > currentYear) {
+      installYearInput.classList.add(
+        "ring-2",
+        "ring-red-500",
+        "border-red-500"
+      );
+      errorMsg.classList.remove("hidden");
+      return;
+    }
     const formData = new FormData(form);
     const inverters = Array.from(
       form.querySelectorAll('input[name="inverter"]:checked')
