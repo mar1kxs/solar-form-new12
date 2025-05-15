@@ -19,22 +19,24 @@
     ></script>
   </head>
   <body class="bg-black">
-    <div class="max-w-4xl mx-auto px-[60px] py-4">
-      <div class="flex justify-end lang-switch mb-2 space-x-2">
-        <button data-lang="ru">🇷🇺 RU</button>
-        <button data-lang="en">🇬🇧 EN</button>
-        <button data-lang="el">🇬🇷 GR</button>
-      </div>
-    </div>
-
     <form
-      class="max-w-4xl mx-auto px-[60px] py-[60px] bg-white rounded-2xl shadow-lg space-y-6"
+      class="max-w-[900px] mx-auto px-[50px] py-[38px] bg-white rounded-xl shadow-lg space-y-6 relative"
       id="solarForm"
     >
+      <div class="absolute top-5 right-10">
+        <select
+          id="languageSelect"
+          class="p-2 border rounded-lg cursor-pointer"
+        >
+          <option value="ru">🇷🇺 Русский</option>
+          <option value="en" selected>🇬🇧 English</option>
+          <option value="el">🇬🇷 Ελληνικά</option>
+        </select>
+      </div>
       <div class="flex justify-between items-start">
         <div>
           <h2
-            class="text-3xl font-bold text-gray-900 leading-tight"
+            class="text-2xl font-bold text-gray-900 leading-tight"
             data-ru="12 месяцев<br>обслуживание"
             data-en="12 months<br>of service"
             data-el="12 μήνες<br>συντήρησης"
@@ -55,7 +57,7 @@
           data-placeholder-en="First name*"
           data-placeholder-ru="Имя*"
           data-placeholder-el="Όνομα*"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           required
           data-ru="Имя*"
           data-en="First name*"
@@ -68,7 +70,7 @@
           data-placeholder-en="Last name*"
           data-placeholder-ru="Фамилия*"
           data-placeholder-el="Επώνυμο*"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           required
           data-en="Last name*"
           data-ru="Фамилия*"
@@ -78,7 +80,7 @@
           type="email"
           name="email"
           placeholder="Email*"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           required
           data-ru="Эл. почта*"
           data-en="Email*"
@@ -88,7 +90,7 @@
           type="tel"
           name="phone"
           id="phone"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           required
           data-en="Phone*"
           data-ru="Телефон*"
@@ -102,7 +104,7 @@
           data-placeholder-en="Street and house number"
           data-placeholder-ru="Улица и номер дома"
           data-placeholder-el="Οδός και αριθμός"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           data-ru="Улица и номер дома"
           data-en="Street and house number"
           data-el="Οδός και αριθμός"
@@ -115,7 +117,7 @@
           data-placeholder-en="City and district"
           data-placeholder-ru="Город и район"
           data-placeholder-el="Πόλη και περιοχή"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           data-ru="Город и район"
           data-en="City and district"
           data-el="Πόλη και περιοχή"
@@ -128,7 +130,7 @@
           data-placeholder-en="Postal code"
           data-placeholder-ru="Почтовый индекс"
           data-placeholder-el="Ταχυδρομικός κώδικας"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           data-ru="Почтовый индекс"
           data-en="Postal code"
           data-el="Ταχυδρομικός κώδικας"
@@ -140,7 +142,7 @@
           data-placeholder-en="Installation year"
           data-placeholder-ru="Примерный год установки"
           data-placeholder-el="Έτος εγκατάστασης"
-          class="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+          class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           data-ru="Примерный год установки"
           data-en="Installation year"
           data-el="Έτος εγκατάστασης"
