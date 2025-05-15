@@ -17,6 +17,20 @@ document
 
     const form = e.target;
     const formData = new FormData(form);
+    const inverters = Array.from(
+      form.querySelectorAll('input[name="inverter"]:checked')
+    ).map((el) => el.value);
+
+    const connections = Array.from(
+      form.querySelectorAll('input[name="connection"]:checked')
+    ).map((el) => el.value);
+
+    const monitoring = Array.from(
+      form.querySelectorAll('input[name="monitoring"]:checked')
+    ).map((el) => el.value);
+    formData.set("inverter", inverters.join(", "));
+    formData.set("connection", connections.join(", "));
+    formData.set("monitoring", monitoring.join(", "));
 
     const data = {};
     formData.forEach((value, key) => (data[key] = value));
