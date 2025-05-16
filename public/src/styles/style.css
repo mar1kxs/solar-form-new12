@@ -1,28 +1,33 @@
 * {
   font-family: "Clear Sans", sans-serif;
+  box-sizing: border-box; /* Щоб padding не ламав розмітку */
 }
+
 html,
 body {
   height: 100%;
   margin: 0;
   overflow: hidden; /* Блокує скрол сайту */
-  width: fit-content;
 }
 
 .form-wrapper {
   position: fixed;
   inset: 0;
-  overflow-y: auto;
+  overflow-y: auto; /* Дозволяє скрол тільки формі */
   background: transparent;
   display: flex;
   justify-content: center;
   align-items: start;
-  width: fit-content;
+  padding: 20px; /* Щоб не злипалося з краями */
 }
 
 form {
   width: 100%;
   max-width: 768px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 38px 50px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .custom-checkbox {
