@@ -4,18 +4,24 @@
 html,
 body {
   height: 100%;
+  margin: 0;
+  overflow: hidden; /* Блокує скрол сайту */
+}
+
+.form-wrapper {
+  position: fixed;
+  inset: 0;
   overflow-y: auto;
+  background: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 
 form {
-  max-height: 100vh;
-  overflow-y: hidden;
-}
-
-@media (max-height: 850px) {
-  form {
-    overflow-y: scroll;
-  }
+  width: 100%;
+  max-width: 768px;
 }
 
 .custom-checkbox {
