@@ -13,7 +13,6 @@ body {
   inset: 0;
   overflow-y: auto;
   background: white;
-  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: start;
