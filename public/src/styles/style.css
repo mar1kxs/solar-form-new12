@@ -4,12 +4,18 @@
 html,
 body {
   height: 100%;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 form {
   max-height: 100vh;
-  overflow-y: scroll;
+  overflow-y: hidden;
+}
+
+@media (max-height: 850px) {
+  form {
+    overflow-y: scroll;
+  }
 }
 
 .custom-checkbox {
