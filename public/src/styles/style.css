@@ -13,10 +13,11 @@ body {
   position: fixed;
   inset: 0;
   overflow-y: auto;
-  background: white;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: start;
+  width: fit-content;
 }
 
 form {
