@@ -42,3 +42,15 @@ label {
   font-weight: 600;
   width: max-content;
 }
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  .form-wrapper {
+    overflow-y: auto;
+    height: 100vh;
+  }
+}
