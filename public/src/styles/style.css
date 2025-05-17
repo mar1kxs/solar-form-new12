@@ -7,13 +7,13 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: auto; /* Блокує скрол сайту */
+  overflow: visible;
 }
 
 .form-wrapper {
   position: fixed;
   inset: 0;
-  overflow-y: auto; /* Дозволяє скрол тільки формі */
+  overflow-y: visible;
   background: transparent;
   display: flex;
   justify-content: center;
